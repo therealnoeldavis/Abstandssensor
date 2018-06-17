@@ -20,8 +20,13 @@ def distance():
 
 try:
     while True:
-        sensor2 = distance()
-        print (sensor2)
-	time.sleep(0.25)
+	entfernung_summe = 0
+	for i in range (50):	
+       	    messung = distance()
+	    entfernung_summe = entfernung_summe + messung    
+	    time.sleep(0.002)
+	sensor1 = entfernung_summe/50
+	print (sensor1)
 except KeyboardInterrupt:
     GPIO.cleanup()
+ 
